@@ -1,0 +1,115 @@
+#+LaTeX_CLASS: org-plain-latex
+#+LaTeX_CLASS_OPTIONS: [a4paper, 11pt]
+#+OPTIONS: toc:nil number:nil
+#+LATEX_HEADER: \usepackage{amsmath}%提供数学公式支持
+#+LATEX_HEADER: \usepackage[utf8x]{inputenc}
+#+LATEX_HEADER: \usepackage{graphics}%用于添加图片
+#+LATEX_HEADER: \usepackage{graphicx}%加强插图命令
+#+LATEX_HEADER: \newcommand{\figpath}[1]{contents/fig/#1}
+#+LATEX_HEADER: 
+#+LATEX_HEADER: \usepackage{fontspec}%用于配置字体
+#+LATEX_HEADER: \usepackage[table]{xcolor}%用于各种颜色环境
+#+LATEX_HEADER: \usepackage{enumitem}%用于定制list和enum
+#+LATEX_HEADER: \usepackage{float}%用于控制Float环境，添加H参数（强制放在Here）
+#+LATEX_HEADER: \usepackage[colorlinks,linkcolor=airforceblue,urlcolor=blue,anchorcolor=blue,citecolor=green]{hyperref}%用于超链接，另外添加该包目录会自动添加引用。
+#+LATEX_HEADER: 
+#+LATEX_HEADER: \usepackage[most]{tcolorbox}%用于添加各种边框支持
+#+LATEX_HEADER: \usepackage{listings}
+#+LATEX_HEADER: \usepackage{dingbat}%有carriagereturn
+#+LATEX_HEADER: \usepackage[cache=true,outputdir=./out]{minted}%如果不保留临时文件就设置cache=false,如果输出设置了其他目录那么outputdir参数也有手动指定，否则会报错。
+#+LATEX_HEADER: \tcbuselibrary{minted}%加载tcolorbox的代码风格
+#+LATEX_HEADER: 
+#+LATEX_HEADER: \usepackage[a4paper,left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}%用于控制版式
+#+LATEX_HEADER: \usepackage{appendix}%用于控制附加文件
+#+LATEX_HEADER: \usepackage{ifthen}
+#+LATEX_HEADER: 
+#+LATEX_HEADER: \usepackage{pdfpages}%用于支持插入其他pdf页
+#+LATEX_HEADER: \usepackage{booktabs}%目前用于给表格添加 \toprule \midrule 等命令
+#+LATEX_HEADER: \usepackage{marginnote} %用于边注
+#+LATEX_HEADER: \usepackage[pagestyles,toctitles]{titlesec} %用于标题格式DIY
+#+LATEX_HEADER: % \usepackage{fancyhdr}%用于排版页眉页脚
+#+LATEX_HEADER: \usepackage{ragged2e} % 用于对齐
+#+LATEX_HEADER: %\usepackage{fixltx2e} %用于文本环境的下标 % 2015 版本后已经不再需要了
+#+LATEX_HEADER: \usepackage{ulem} %用于好看的下划线、波浪线等修饰
+#+LATEX_HEADER: \usepackage{pifont} %数学符号
+#+LATEX_HEADER: \usepackage{amssymb} %数学符号
+#+LATEX_HEADER: \usepackage{unicode-math}
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER: %\setmainfont{DejaVu Serif}
+#+LATEX_HEADER: 
+#+LATEX_HEADER: \definecolor{langback}{RGB}{245,244,250}
+#+LATEX_HEADER: \definecolor{langbacktitle}{RGB}{235,233,245}
+#+LATEX_HEADER: \definecolor{langtitle}{RGB}{177,177,177}
+#+LATEX_HEADER: \definecolor{langno}{RGB}{202,202,202}
+#+LATEX_HEADER: \tcbset{arc=1mm}
+#+LATEX_HEADER: \renewcommand{\theFancyVerbLine}{\sffamily\textcolor{langno}{\scriptsize\oldstylenums{\arabic{FancyVerbLine}}}}%重定义行号的格式
+#+LATEX_HEADER: \newtcblisting{langbox}[1][tex]{%参考自https://reishin.me/tmux/ 的代码框样式
+#+LATEX_HEADER:     arc=1mm,breakable,
+#+LATEX_HEADER:     colframe=langbacktitle,
+#+LATEX_HEADER:     colbacktitle=langbacktitle,
+#+LATEX_HEADER:     coltitle=langtitle,
+#+LATEX_HEADER:     width=\textwidth,
+#+LATEX_HEADER:     fonttitle=\bfseries\sffamily,
+#+LATEX_HEADER:     lefttitle=1mm,toptitle=0.5mm,bottomtitle=0.5mm,
+#+LATEX_HEADER:     drop shadow,
+#+LATEX_HEADER:     listing engine=minted,
+#+LATEX_HEADER:     minted style=colorful,
+#+LATEX_HEADER:     minted language=#1,
+#+LATEX_HEADER:     minted options={fontsize=\small,breaklines,autogobble,xleftmargin=1mm,framesep=2mm, breakautoindent,breaksymbolleft=\raisebox{0.8ex}{ \small\reflectbox{\carriagereturn}},breaksymbolindentleft=0pt, breaksymbolsepleft=0pt, breaksymbolright=\small\carriagereturn, breaksymbolindentright=0pt, breaksymbolsepright=0pt, breakbytokenanywhere},
+#+LATEX_HEADER:     colback=langback,listing only,
+#+LATEX_HEADER:     bottomrule=0mm,leftrule=0mm,toprule=0mm,rightrule=0mm,
+#+LATEX_HEADER:     enhanced,
+#+LATEX_HEADER:     % overlay={\begin{tcbclipinterior}\fill[langback] (frame.south west)rectangle ([xshift=5mm]frame.north west);\end{tcbclipinterior}}
+#+LATEX_HEADER: }
+#+LATEX_HEADER: \lstset{basicstyle = \ttfamily}
+#+LATEX_HEADER: \setmonofont{Monaco} % ^pyD4wS
+#+LATEX_HEADER: 
+#+LATEX_HEADER: \definecolor{boxback}{RGB}{245,246,250}
+#+LATEX_HEADER: \newtcolorbox{markquote}{
+#+LATEX_HEADER:     colback=boxback,fonttitle=\sffamily\bfseries,arc=0pt,breakable,
+#+LATEX_HEADER:     boxrule=0pt,bottomrule=-1pt,toprule=-1pt,leftrule=-1pt,rightrule=-1pt,
+#+LATEX_HEADER:     drop shadow,enhanced
+#+LATEX_HEADER: }
+#+LATEX_HEADER: 
+#+LATEX_HEADER: \usepackage[UTF8,heading=true]{ctex}
+#+LATEX_HEADER: \ctexset{
+#+LATEX_HEADER: 	section = {
+#+LATEX_HEADER: 	% number = 第\chinese{section}章,
+#+LATEX_HEADER: 	format = \zihao{3}\bfseries,
+#+LATEX_HEADER: 	},
+#+LATEX_HEADER: 	subsection = {
+#+LATEX_HEADER: 	% number = \arabic{section}.\arabic{subsection},
+#+LATEX_HEADER: 	format = \Large\bfseries
+#+LATEX_HEADER: 	},
+#+LATEX_HEADER: 	subsubsection = {
+#+LATEX_HEADER: 	% number = \arabic{section}.\arabic{subsection}.\arabic{subsubsection},
+#+LATEX_HEADER: 	format = \Large\bfseries,
+#+LATEX_HEADER: 	},
+#+LATEX_HEADER:     paragraph = {
+#+LATEX_HEADER: 	format = \large\bfseries,
+#+LATEX_HEADER: 	},
+#+LATEX_HEADER:     subparagraph = {
+#+LATEX_HEADER: 	format = \large\bfseries,
+#+LATEX_HEADER: 	},
+#+LATEX_HEADER: }
+#+LATEX_HEADER: 
+#+LATEX_HEADER: \pagestyle{plain}
+#+LATEX_HEADER: \setcounter{secnumdepth}{0}
+#+LATEX_HEADER: \setlength{\parindent}{0em}%设置首行缩进
+#+LATEX_HEADER: \linespread{1.3}%设置行距
+#+LATEX_HEADER: 
+#+LATEX_HEADER: \setlength{\parskip}{0.5em}%设置段间距
+#+LATEX_HEADER: \setcounter{tocdepth}{5}%设置目录级数
+#+LATEX_HEADER: 
+#+LATEX_HEADER: 
+#+LATEX_HEADER: \newtcbox{\inlang}[1][red]{on line,
+#+LATEX_HEADER: arc=0pt,outer arc=0pt,colback=#1!10!white,colframe=#1!50!black,
+#+LATEX_HEADER: boxsep=0pt,left=1pt,right=1pt,top=2pt,bottom=2pt,
+#+LATEX_HEADER: boxrule=0pt,bottomrule=-1pt,toprule=-1pt,leftrule=-1pt,rightrule=-1pt}
+#+LATEX_HEADER: 
+#+LATEX_HEADER: \newlength\tablewidth
+
+#+LATEX_HEADER: \definecolor{tablelinegray}{RGB}{221,221,221}
+#+LATEX_HEADER: \definecolor{tablerowgray}{RGB}{247,247,247}
+#+LATEX_HEADER: \definecolor{tabletopgray}{RGB}{245,246,250}
+#+LATEX_HEADER: \definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
