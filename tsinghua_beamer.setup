@@ -1,0 +1,35 @@
+#+LaTeX_CLASS: beamer
+#+OPTIONS: toc:t number:t author:t date:t H:2
+#+AUTHOR: @@beamer:田卓钰\\指导老师: 余宏亮@@
+#+TITLE: 多模态 MLC PCM 性能-寿命平衡优化技术研究
+#+BEAMER_HEADER: \usepackage{ctex, hyperref}
+#+BEAMER_HEADER: \usepackage[T1]{fontenc}
+#+BEAMER_HEADER: 
+#+BEAMER_HEADER: % other packages
+#+BEAMER_HEADER: \usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+#+BEAMER_HEADER: \usepackage{graphicx,pstricks,listings,stackengine}
+#+BEAMER_HEADER: 
+#+BEAMER_HEADER: \institute{清华大学计算机科学与技术系}
+#+BEAMER_HEADER: % \date{}
+#+BEAMER_HEADER: \usepackage{Tsinghua}
+#+BEAMER_HEADER: 
+#+BEAMER_HEADER: % defs
+#+BEAMER_HEADER: \def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
+#+BEAMER_HEADER: \def\env#1{\texttt{\color{blue}\footnotesize #1}}
+#+BEAMER_HEADER: \definecolor{deepblue}{rgb}{0,0,0.5}
+#+BEAMER_HEADER: \definecolor{deepred}{rgb}{0.6,0,0}
+#+BEAMER_HEADER: \definecolor{deepgreen}{rgb}{0,0.5,0}
+#+BEAMER_HEADER: \definecolor{halfgray}{gray}{0.55}
+#+BEAMER_HEADER: 
+#+BEAMER_HEADER: \lstset{
+#+BEAMER_HEADER:     basicstyle=\ttfamily\small,
+#+BEAMER_HEADER:     keywordstyle=\bfseries\color{deepblue},
+#+BEAMER_HEADER:     emphstyle=\ttfamily\color{deepred},    % Custom highlighting style
+#+BEAMER_HEADER:     stringstyle=\color{deepgreen},
+#+BEAMER_HEADER:     numbers=left,
+#+BEAMER_HEADER:     numberstyle=\small\color{halfgray},
+#+BEAMER_HEADER:     rulesepcolor=\color{red!20!green!20!blue!20},
+#+BEAMER_HEADER:     frame=shadowbox,
+#+BEAMER_HEADER: }
+#+BEAMER_HEADER: 
+#+BEAMER_HEADER: % \graphicspath{{/Users/quebec/notes/vx_attachments/}}
