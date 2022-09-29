@@ -1,6 +1,6 @@
 #+LaTeX_CLASS: org-plain-latex
 #+LaTeX_CLASS_OPTIONS: [a4paper, 12rt]
-#+OPTIONS: toc:nil number:nil author:nil date:nil
+#+OPTIONS: number:nil author:nil date:nil toc:nil
 #+LATEX_HEADER: \usepackage{amsmath}%提供数学公式支持
 #+LATEX_HEADER: \usepackage{graphics}%用于添加图片
 #+LATEX_HEADER: \usepackage{graphicx}%加强插图命令
@@ -8,6 +8,9 @@
 #+LATEX_HEADER: 
 #+LATEX_HEADER: \usepackage{fontspec}%用于配置字体
 #+LATEX_HEADER: \usepackage[table]{xcolor}%用于各种颜色环境
+#+LATEX_HEADER: \usepackage{svg}
+#+LATEX_HEADER: \usepackage{algorithm}
+#+LATEX_HEADER: \usepackage{algpseudocode}
 #+LATEX_HEADER: \usepackage{enumitem}%用于定制list和enum
 #+LATEX_HEADER: \usepackage{float}%用于控制Float环境，添加H参数（强制放在Here）
 #+LATEX_HEADER: \usepackage[colorlinks,linkcolor=airforceblue,urlcolor=blue,anchorcolor=blue,citecolor=green]{hyperref}%用于超链接，另外添加该包目录会自动添加引用。
@@ -41,7 +44,7 @@
 #+LATEX_HEADER: \definecolor{langno}{RGB}{202,202,202}
 #+LATEX_HEADER: \tcbset{arc=1mm}
 #+LATEX_HEADER: \renewcommand{\theFancyVerbLine}{\sffamily\textcolor{langno}{\scriptsize\oldstylenums{\arabic{FancyVerbLine}}}}%重定义行号的格式
-#+LATEX_HEADER: \newtcblisting{langbox}[1][tex]{%参考自https://reishin.me/tmux/ 的代码框样式
+#+LATEX_HEADER: \newtcblisting{langbox}[1][c++]{%参考自https://reishin.me/tmux/ 的代码框样式
 #+LATEX_HEADER:     arc=1mm,breakable,
 #+LATEX_HEADER:     colframe=langbacktitle,
 #+LATEX_HEADER:     colbacktitle=langbacktitle,

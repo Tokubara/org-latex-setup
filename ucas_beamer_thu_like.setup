@@ -1,16 +1,20 @@
-#+LaTeX_CLASS: beamer
 #+OPTIONS: toc:nil number:t author:t date:t H:2 title:nil
-#+AUTHOR: @@beamer:田卓钰\\指导老师: 余宏亮@@
-#+BEAMER_HEADER: \usepackage{ctex, hyperref}
+#+AUTHOR: @@beamer:田卓钰\\指导老师: 张明喆@@
+#+cite_export: biblatex
+#+BEAMER_HEADER: % \author[马时杰]{马时杰\\{\small name@ia.ac.cn}}
+#+BEAMER_HEADER: \usepackage{ctex,hyperref}
 #+BEAMER_HEADER: \usepackage[T1]{fontenc}
-#+BEAMER_HEADER: \usepackage[cache=true]{minted}
+#+BEAMER_HEADER: \usepackage{fontspec}
+#+BEAMER_HEADER: 
 #+BEAMER_HEADER: % other packages
 #+BEAMER_HEADER: \usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
 #+BEAMER_HEADER: \usepackage{graphicx,pstricks,listings,stackengine}
 #+BEAMER_HEADER: 
-#+BEAMER_HEADER: \institute{清华大学计算机科学与技术系}
-#+BEAMER_HEADER: % \date{}
-#+BEAMER_HEADER: \usepackage{Tsinghua}
+#+BEAMER_HEADER: % packages and settings for bibtex
+#+BEAMER_HEADER: \setbeamerfont{footnote}{size=\tiny}   % footnote for bibtex
+#+BEAMER_HEADER: \setbeamertemplate{bibliography item}[text]   % reference list for bibtex
+#+BEAMER_HEADER: \institute{中国科学院信息工程研究所}
+#+BEAMER_HEADER: \usepackage{ucas}
 #+BEAMER_HEADER: 
 #+BEAMER_HEADER: % defs
 #+BEAMER_HEADER: \def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
@@ -30,5 +34,5 @@
 #+BEAMER_HEADER:     rulesepcolor=\color{red!20!green!20!blue!20},
 #+BEAMER_HEADER:     frame=shadowbox,
 #+BEAMER_HEADER: }
-#+BEAMER_HEADER: 
-#+BEAMER_HEADER: % \graphicspath{{/Users/quebec/notes/vx_attachments/}}
+#+BEAMER_HEADER: \titlegraphic{\begin{center} \includegraphics[width=0.15\linewidth]{fig/UCAS_logo.eps}\quad\quad\quad\quad \includegraphics[width=0.15\linewidth]{fig/CASIA_logo.png} \end{center}}
+
