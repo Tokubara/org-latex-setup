@@ -1,6 +1,5 @@
 #+LaTeX_CLASS: org-plain-latex
-#+LaTeX_CLASS_OPTIONS: [a4paper, 12rt]
-#+OPTIONS: number:nil author:nil date:nil toc:nil
+#+LaTeX_CLASS_OPTIONS: [a4paper, 12pt]
 #+LATEX_HEADER: \usepackage{amsmath}%提供数学公式支持
 #+LATEX_HEADER: \usepackage{graphics}%用于添加图片
 #+LATEX_HEADER: \usepackage{graphicx}%加强插图命令
@@ -95,12 +94,10 @@
 #+LATEX_HEADER: }
 #+LATEX_HEADER: 
 #+LATEX_HEADER: \pagestyle{plain}
-#+LATEX_HEADER: \setcounter{secnumdepth}{0}
 #+LATEX_HEADER: \setlength{\parindent}{0em}%设置首行缩进
 #+LATEX_HEADER: \linespread{1.3}%设置行距
 #+LATEX_HEADER: 
 #+LATEX_HEADER: \setlength{\parskip}{0.5em}%设置段间距
-#+LATEX_HEADER: \setcounter{tocdepth}{5}%设置目录级数
 #+LATEX_HEADER: 
 #+LATEX_HEADER: 
 #+LATEX_HEADER: \newtcbox{\inlang}[1][red]{on line,
