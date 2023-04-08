@@ -4,8 +4,10 @@
 #+LATEX_HEADER: \usepackage{graphics}%用于添加图片
 #+LATEX_HEADER: \usepackage{graphicx}%加强插图命令
 #+LATEX_HEADER: \newcommand{\figpath}[1]{contents/fig/#1}
+#+LATEX_HEADER: \renewcommand{\texttt}[1]{{\ttfamily\seqsplit{#1}}}
 #+LATEX_HEADER: 
 #+LATEX_HEADER: \usepackage{fontspec}%用于配置字体
+#+LATEX_HEADER: \usepackage{seqsplit}
 #+LATEX_HEADER: \usepackage[table]{xcolor}%用于各种颜色环境
 #+LATEX_HEADER: \usepackage{svg}
 #+LATEX_HEADER: \usepackage{algorithm}
@@ -34,7 +36,6 @@
 #+LATEX_HEADER: \usepackage{ulem} %用于好看的下划线、波浪线等修饰
 #+LATEX_HEADER: \usepackage{pifont} %数学符号
 #+LATEX_HEADER: \usepackage{amssymb} %数学符号
-#+LATEX_HEADER: \usepackage{fontspec}
 #+LATEX_HEADER: %\setmainfont{DejaVu Serif}
 #+LATEX_HEADER: 
 #+LATEX_HEADER: \definecolor{langback}{RGB}{245,244,250}
@@ -43,6 +44,8 @@
 #+LATEX_HEADER: \definecolor{langno}{RGB}{202,202,202}
 #+LATEX_HEADER: \tcbset{arc=1mm}
 #+LATEX_HEADER: \renewcommand{\theFancyVerbLine}{\sffamily\textcolor{langno}{\scriptsize\oldstylenums{\arabic{FancyVerbLine}}}}%重定义行号的格式
+#+LATEX_HEADER: \setminted{breaklines=true, breakanywhere=true}
+#+LATEX_HEADER: \setmintedinline{breaklines=true, breakbytokenanywhere=true, breakafter=_}
 #+LATEX_HEADER: \newtcblisting{langbox}[1][c++]{%参考自https://reishin.me/tmux/ 的代码框样式
 #+LATEX_HEADER:     arc=1mm,breakable,
 #+LATEX_HEADER:     colframe=langbacktitle,
@@ -53,16 +56,15 @@
 #+LATEX_HEADER:     lefttitle=1mm,toptitle=0.5mm,bottomtitle=0.5mm,
 #+LATEX_HEADER:     drop shadow,
 #+LATEX_HEADER:     listing engine=minted,
-#+LATEX_HEADER:     minted style=colorful,
 #+LATEX_HEADER:     minted language=#1,
-#+LATEX_HEADER:     minted options={fontsize=\small,breaklines,autogobble,xleftmargin=1mm,framesep=2mm, breakautoindent,breaksymbolleft=\raisebox{0.8ex}{ \small\reflectbox{\carriagereturn}},breaksymbolindentleft=0pt, breaksymbolsepleft=0pt, breaksymbolright=\small\carriagereturn, breaksymbolindentright=0pt, breaksymbolsepright=0pt, breakbytokenanywhere},
+#+LATEX_HEADER:     minted options={fontsize=\small,breaklines,autogobble,xleftmargin=1mm,framesep=2mm, breakautoindent,breaksymbolleft=\raisebox{0.8ex}{ \small\reflectbox{\carriagereturn}},breaksymbolindentleft=0pt, breaksymbolsepleft=0pt, breaksymbolright=\small\carriagereturn, breaksymbolindentright=0pt, breaksymbolsepright=0pt, breaklines=true, breakanywhere},
 #+LATEX_HEADER:     colback=langback,listing only,
 #+LATEX_HEADER:     bottomrule=0mm,leftrule=0mm,toprule=0mm,rightrule=0mm,
 #+LATEX_HEADER:     enhanced,
 #+LATEX_HEADER:     % overlay={\begin{tcbclipinterior}\fill[langback] (frame.south west)rectangle ([xshift=5mm]frame.north west);\end{tcbclipinterior}}
 #+LATEX_HEADER: }
 #+LATEX_HEADER: \lstset{basicstyle = \ttfamily}
-#+LATEX_HEADER: \setmonofont{Monaco} % ^pyD4wS
+#+LATEX_HEADER: \setmonofont{Monaco}
 #+LATEX_HEADER: 
 #+LATEX_HEADER: \definecolor{boxback}{RGB}{245,246,250}
 #+LATEX_HEADER: \newtcolorbox{markquote}{
@@ -71,11 +73,11 @@
 #+LATEX_HEADER:     drop shadow,enhanced
 #+LATEX_HEADER: }
 #+LATEX_HEADER: 
-#+LATEX_HEADER: \usepackage[UTF8,heading=true]{ctex}
+#+LATEX_HEADER: \usepackage[UTF8,heading=true,sub4section]{ctex}
 #+LATEX_HEADER: \ctexset{
 #+LATEX_HEADER: 	section = {
 #+LATEX_HEADER: 	% number = 第\chinese{section}章,
-#+LATEX_HEADER: 	format = \zihao{3}\bfseries,
+#+LATEX_HEADER: 	format = \huge \bfseries,
 #+LATEX_HEADER: 	},
 #+LATEX_HEADER: 	subsection = {
 #+LATEX_HEADER: 	% number = \arabic{section}.\arabic{subsection},
@@ -94,11 +96,12 @@
 #+LATEX_HEADER: }
 #+LATEX_HEADER: 
 #+LATEX_HEADER: \pagestyle{plain}
+#+LATEX_HEADER: \setcounter{secnumdepth}{5}
 #+LATEX_HEADER: \setlength{\parindent}{0em}%设置首行缩进
 #+LATEX_HEADER: \linespread{1.3}%设置行距
 #+LATEX_HEADER: 
 #+LATEX_HEADER: \setlength{\parskip}{0.5em}%设置段间距
-#+LATEX_HEADER: 
+#+LATEX_HEADER: \setcounter{tocdepth}{5}
 #+LATEX_HEADER: 
 #+LATEX_HEADER: \newtcbox{\inlang}[1][red]{on line,
 #+LATEX_HEADER: arc=0pt,outer arc=0pt,colback=#1!10!white,colframe=#1!50!black,
